@@ -410,7 +410,7 @@ Una vez realizado el proceso anterior, es possible exportar la serialización en
 
 Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello, se realiza una validación sintáctica usando la herramienta RDF [Validata](https://www.w3.org/2015/03/ShExValidata/) de W3C. Se obtiene el siguiente resultado de la validación:
 
-![Validación RDF](/images/Validata_ RDF_TTL-www.w3.org.png)
+![Validación RDF](/images/Validata_RDF_TTL.png)
 
 
 ### 2.6.- Enlazado
@@ -442,7 +442,6 @@ Tras este proceso se ha reconciliado el 99,84% de las especies. No ha sido posib
 9725.	Parking autoctonus
 9726.	Saulensis Rotensius
 
-Se genera el archivo arbolado_viario.ttl
 
 ### 2.7.- Publicación
 
