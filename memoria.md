@@ -419,7 +419,9 @@ Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello,
 
 El primer paso es identificar clases cuyas instancias puedan ser el sujeto del enlace y el segundo paso es identificar datasets que pueden contener instancias para las clases previamente identificadas.
 
-La tarea de enlazado se realizará utilizando el servicio de reconciliación de la extensión RDF para OpenRefine.
+La tarea de enlazado se realizará utilizando el servicio de reconciliación de la extensión RDF para OpenRefine contra el servicio de reconciliación de la DBpedia.
+
+Como primer paso, se añade el servicio de reconciliación basado en SPARQL y que denominamos 'dbpedia' añadiendo la URL del SPARQL EndPoint de la DBpedia: http://dbpedia.org/sparql
 
 El proceso de reconciliación requiere la corrección de algunos ítems con nombres erróneos. Por ejemplo, se sutituye: 'Junglans regia' por 'Juglans regia', 'Hulmus minor' por 'Ulmus minor', 'Cassuarina cunninghamiana' por 'Casuarina cunninghamiana', 'Hibiscus syracus' por 'Hibiscus syriacus' 'Ilex aquilifolium' por 'Ilex aquifolium' y otros errores del mismo estilo. También se edita 'Cedrus deodara o atlantica' por 'Cedrus deodara'. Igualmente se encuentra alguna especie cuya denoninación es 'desconocido 6.2', 'Fraxinus americana verificar' o 'Liriodendron tulipifera KO' que se puede sobreentender que por alguna imprecisión están en pendientes de revisión por parte de los responsables del dataset. Por último algunas especies incluyen nombres del estilo 'Carpinus betulus var. fastigiata'
 
