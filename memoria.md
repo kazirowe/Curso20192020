@@ -417,17 +417,21 @@ Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello,
 
 ### 2.6.- Enlazado
 
+La tarea de enlazado se realizará utilizando el servicio de reconciliación de la extensión RDF para OpenRefine contra el servicio de reconciliación de Wikidata.
+
 El primer paso es identificar clases cuyas instancias puedan ser el sujeto del enlace y el segundo paso es identificar datasets que pueden contener instancias para las clases previamente identificadas.
 
-La tarea de enlazado se realizará utilizando el servicio de reconciliación de la extensión RDF para OpenRefine contra el servicio de reconciliación de la DBpedia.
+En este caso, ser realizará una alineación por valores, la clase a enlazar será 'Especie' y se enlazará con el nombre cientifico de la especie arborea definida en Wikidata, 'taxon name'.
 
-Como primer paso, se añade el servicio de reconciliación basado en SPARQL y que denominamos 'dbpedia' añadiendo la URL del [SPARQL EndPoint](http://dbpedia.org/sparql) de la DBpedia.
+Este proceso nos definela URL que define cada especie en Wikidata y que hemos añadido en el esqueleto RDFn mencionado anteriormente:
 
-El proceso de reconciliación requiere la corrección de algunos ítems con nombres erróneos. Por ejemplo, se sutituye: 'Junglans regia' por 'Juglans regia', 'Hulmus minor' por 'Ulmus minor', 'Cassuarina cunninghamiana' por 'Casuarina cunninghamiana', 'Hibiscus syracus' por 'Hibiscus syriacus' 'Ilex aquilifolium' por 'Ilex aquifolium' y otros errores del mismo estilo. También se edita 'Cedrus deodara o atlantica' por 'Cedrus deodara'. Igualmente se encuentra alguna especie cuya denoninación es 'desconocido 6.2', 'Fraxinus americana verificar' o 'Liriodendron tulipifera KO' que se puede sobreentender que por alguna imprecisión están en pendientes de revisión por parte de los responsables del dataset. Por último algunas especies incluyen nombres del estilo 'Carpinus betulus var. fastigiata'
+'Especie' content used 'URI' use expression '"http://www.wikidata.org/entity/"+cell.recon.match.id'
+
+El proceso de reconciliación de valores requiere, ademñas, la corrección de algunos ítems con nombres erróneos. Por ejemplo, se sutituye: 'Junglans regia' por 'Juglans regia', 'Hulmus minor' por 'Ulmus minor', 'Cassuarina cunninghamiana' por 'Casuarina cunninghamiana', 'Hibiscus syracus' por 'Hibiscus syriacus' 'Ilex aquilifolium' por 'Ilex aquifolium' y otros errores del mismo estilo. También se edita 'Cedrus deodara o atlantica' por 'Cedrus deodara'. Igualmente se encuentra alguna especie cuya denoninación es 'desconocido 6.2', 'Fraxinus americana verificar' o 'Liriodendron tulipifera KO' que se puede sobreentender que por alguna imprecisión están en pendientes de revisión por parte de los responsables del dataset. Por último algunas especies incluyen nombres del estilo 'Carpinus betulus var. fastigiata'
 
 Nota curiosa: se encuentra una especie ('Arbol_9724') que se llama 'Parking autoctonus' situada en el 'Parque Científico-Tecnológico' ;-)
 
-Tras este proceso se ha reconciliado el 99,84% de las especies. No ha sido posible reconciliar:
+Tras este proceso se ha reconciliado el **99,84%** de los valores. No ha sido posible reconciliar:
 
 545.	desconocido 6.2
 609.	Fraxinus americana verificar
