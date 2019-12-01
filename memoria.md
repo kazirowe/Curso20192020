@@ -191,6 +191,8 @@ La ontología será utilizada por los Ayuntamientos publicadores de Datos Abiert
 
 Por otro lado, se debe tener en cuenta, como requisito no funcional para la implementación de la ontología, la existencia de vocabularios reutilizables.
 
+![Protege Arbolado](images/Protege_Arbolado.png)
+
 #### 2.4.2.- Extracción de términos del esquema de datos y de los datos
 
 Del modelo de datos subyacente al conjunto seleccionado para esta práctica se obtiene la siguiente relación de recursos principales:
