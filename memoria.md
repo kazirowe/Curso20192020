@@ -408,11 +408,10 @@ Una vez realizado el proceso anterior, es possible exportar la serialización en
 
 ![Arbolado TTL](/images/Arbolado_ttl.png)
 
-****PENDIENTE****
+Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello, se realiza una validación sintáctica usando la herramienta RDF [Validata](https://www.w3.org/2015/03/ShExValidata/) de W3C. Se obtiene el siguiente resultado de la validación:
 
-Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello, se realiza una validación sintáctica usando la herramienta RDF Validator. Además, se ejecutan varias consultas SPARQL y se observa la corrección de los resultados obtenidos.
+![Validación RDF](/images/Validata_ RDF_TTL-www.w3.org)
 
-****PENDIENTE****
 
 ### 2.6.- Enlazado
 
@@ -464,7 +463,7 @@ data --version
 
 ```
 data login
-data push arbolado_viario.ttl
+data push arbolado_viario_gijon.ttl
 
 your data is published!
 https://datahub.io/carlosdlfuente/arbolado_viario_gijon/v/1
