@@ -479,8 +479,73 @@ https://datahub.io/carlosdlfuente/arbolado_viario_gijon/v/1
 
 ## 3.- Aplicación y explotación
 
-Capacidad para identificar especies arbóreas ubicadas en la posición del observador y tener acceso a la descripción y características detalladas del ejemplar. Igualmente, debe ser posible acceder a una ficha descriptiva del lugar específico, en función de la denominación de la dirección postal, en el que se encuentra el observador.
+La aplicación que explota los datos enlazados del conjunto transformado, se desarrolla en Java sobre la IDE de Eclipse.  
 
+El objetivo de la aplicación es obtener información sobre características específicas de ejemplares de especies arboreas de la ciudad de Gijón.
+
+A continuación se detallan los diferentes casos de uso que contempla la aplicación y la query SPARQL que se plantea para resolver cada consulta :
+
+* Caso 1: Obtener los nombres cietíficos de todos los árboles de la ciudad
+
+		String queryString = 
+				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
+				"SELECT ?arbol ?nombre_cientifico " +
+				"WHERE {?arbol biol:name ?nombre_cientifico.}" +
+				"LIMIT 10";
+
+* Caso 2: Obtener la situación de todos los árboles de la ciudad
+
+		String queryString2 = 
+				"PREFIX schema: <http://schema.org/> " +
+				"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> " +
+				"SELECT ?arbol ?calle ?latitud ?longitud " +
+				"WHERE {?arbol schema:streetAddress ?calle;" +
+				 " geo:lat ?latitud;" +
+				 " geo:long ?longitud.}" +
+				"LIMIT 10";
+				
+* Caso 3: Obtener el nombre común equivalente al nombre cietífico de todos los árboles de la ciudad
+
+		String queryString3 = 	
+				"PREFIX wikibase: <http://wikiba.se/ontology#> " +
+				"PREFIX wdt: <http://www.wikidata.org/prop/direct/> " +
+				"PREFIX wd: <http://www.wikidata.org/entity/> " +
+				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
+				"SELECT ?arbol ?nombre_cientifico ?nombre_comun " +
+				"WHERE {?arbol biol:name ?nombre_cientifico. " +
+					"SERVICE wdt:label {?nombre_cientifico wdt:P1843 ?nombre_comun .}}" +
+				"LIMIT 10";
+				
+* Caso 4: Obtener los árboles con mayor diámetro de copa
+
+		String queryString4 = 
+				"PREFIX arb: <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#>" +
+				"PREFIX schema: <http://schema.org/> " +
+				"SELECT ?arbol ?calle ?diametro " +
+				"WHERE {?arbol arb:hasDiametroCopa ?diametro;"
+				+ "schema:streetAddress ?calle.}" +
+				"ORDER BY DESC(?diametro)" +
+				"LIMIT 10";
+
+* Caso 5: Obtener todos los nombres y número de árboles distintos y ordenados existentes en el dataset
+
+		String queryString5 = 
+				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
+				"SELECT ?nombre_cientifico (COUNT(?nombre_cientifico) AS ?count)" +
+				"WHERE {?arbol biol:name ?nombre_cientifico} " +
+				"GROUP BY ?nombre_cientifico " +
+				"ORDER BY DESC(?count) " +
+				"LIMIT 20";
+				
+* Caso 6: Obtener todos los árboles alrededor de una ubicación dada (Por ejemplo: 43.531412, -5.661782)
+
+		String queryString6 = 
+				"PREFIX spatial: <http://jena.apache.org/spatial#>" +
+				"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>" + 
+				"SELECT * " +
+				"WHERE {?location spatial:nearby (43.531412 -5.661782 1 'km'). " +
+				 "?arbol geo:location ?location. }" +
+				"LIMIT 20";
 
 ## 4. Conclusiones.
 
