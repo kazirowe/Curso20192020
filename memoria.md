@@ -479,9 +479,9 @@ https://datahub.io/carlosdlfuente/arbolado_viario_gijon/v/1
 
 ## 3.- Aplicación y explotación
 
-La aplicación que explota los datos enlazados del conjunto transformado, se desarrolla en Java sobre la IDE de Eclipse.  
+La [aplicación](/aplicacion/) que explota los datos enlazados del conjunto transformado, se desarrolla usando la API de JENA sobre la IDE de Eclipse.  
 
-El objetivo de la aplicación es obtener información sobre características específicas de ejemplares de especies arboreas de la ciudad de Gijón.
+El objetivo de la aplicación es obtener información sobre características específicas de ejemplares de especies arbóreas de la ciudad de Gijón.
 
 A continuación se detallan los diferentes casos de uso que contempla la aplicación y la query SPARQL que se plantea para resolver cada consulta :
 
@@ -494,23 +494,6 @@ A continuación se detallan los diferentes casos de uso que contempla la aplicac
 				"LIMIT 10";
 
 Salida:
-
-
---------------------------------------------------------------------------------------------------------------
-| arbol                                                         | nombre_cientifico                          |
-==============================================================================================================
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_796>  | <http://www.wikidata.org/entity/Q147064>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_6874> | <http://www.wikidata.org/entity/Q158776>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_8276> | <http://www.wikidata.org/entity/Q255375>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_7236> | <http://www.wikidata.org/entity/Q158746>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_3074> | <http://www.wikidata.org/entity/Q156831>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_9263> | <http://www.wikidata.org/entity/Q732933>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_7302> | <http://www.wikidata.org/entity/Q159657>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_2227> | <http://www.wikidata.org/entity/Q158785>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_4825> | <http://www.wikidata.org/entity/Q17579300> |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1386> | <http://www.wikidata.org/entity/Q255375>   |
---------------------------------------------------------------------------------------------------------------
-
 
 Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_796 --> Nombre cientifico: http://www.wikidata.org/entity/Q147064
 Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6874 --> Nombre cientifico: http://www.wikidata.org/entity/Q158776
@@ -548,7 +531,7 @@ Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_591 --> Situado en
 Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_2390 --> Situado en: CALLE IRENE FERNANDEZ PERERA s/n, con las coordenadas: 4.35199133333333E1^^http://www.w3.org/2001/XMLSchema#double, -5.66876E0^^http://www.w3.org/2001/XMLSchema#double
 
 				
-* Caso 3: Obtener los árboles con mayor diámetro de copa
+* Caso 3: Obtener los árboles con mayor diámetro de copa y su situación
 
 		String queryString3 = 
 				"PREFIX arb: <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#>" +
@@ -616,20 +599,18 @@ Arbol: http://www.wikidata.org/entity/Q149622 --> Unidades: 128^^http://www.w3.o
 					"FILTER regex(?calle, '^Parque Isabel la Católica')}" +
 				"LIMIT 10";
 
--------------------------------------------------------------------------------------------------------------------------------------------
-| arbol                                                         | calle                       | nombre_cientifico                         |
-===========================================================================================================================================
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1006> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q156907>  |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_591>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q26899>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_971>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q27657>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_638>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q156907>  |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_520>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q148950>  |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1290> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q158746>  |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_445>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q1330391> |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_154>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q386585>  |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_825>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q26006>   |
-| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1000> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q748888>  |
--------------------------------------------------------------------------------------------------------------------------------------------
+Salida:
+
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1006 de nombre científico: http://www.wikidata.org/entity/Q156907, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_591 de nombre científico: http://www.wikidata.org/entity/Q26899, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_971 de nombre científico: http://www.wikidata.org/entity/Q27657, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_638 de nombre científico: http://www.wikidata.org/entity/Q156907, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_520 de nombre científico: http://www.wikidata.org/entity/Q148950, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1290 de nombre científico: http://www.wikidata.org/entity/Q158746, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_445 de nombre científico: http://www.wikidata.org/entity/Q1330391, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_154 de nombre científico: http://www.wikidata.org/entity/Q386585, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_825 de nombre científico: http://www.wikidata.org/entity/Q26006, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1000 de nombre científico: http://www.wikidata.org/entity/Q748888, situado en:Parque Isabel la Católica
 
 
 ## 4. Conclusiones.
