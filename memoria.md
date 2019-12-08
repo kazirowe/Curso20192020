@@ -143,17 +143,17 @@ El patrón de URIs, tomando como base la seleccioanda será:
 
 Ruta para términos ontológicos: 
 
-Las clases tendrán la forma: /ontology/<ontologyName>#<className>
-Las propiedades tendrán la forma: /ontology/<ontologyName>#<propertyName>
+Las clases tendrán la forma: "/ontology/<ontologyName>#<className>"
+Las propiedades tendrán la forma: "/ontology/<ontologyName>#<propertyName>"
 
 Concretamente:
 
-Clases: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#Arbol
-Propiedades: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#hasName
+* Clases: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#Arbol
+* Propiedades: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#hasName
 
 Las instancias en la ontología tendrán la forma:
 
-Instancias: /resource/<className>/<identifier>
+Instancias: "/resource/<className>/<identifier>"
 
 Concretamente:
 
