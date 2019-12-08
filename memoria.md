@@ -493,6 +493,36 @@ A continuación se detallan los diferentes casos de uso que contempla la aplicac
 				"WHERE {?arbol biol:name ?nombre_cientifico.}" +
 				"LIMIT 10";
 
+Salida:
+
+
+--------------------------------------------------------------------------------------------------------------
+| arbol                                                         | nombre_cientifico                          |
+==============================================================================================================
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_796>  | <http://www.wikidata.org/entity/Q147064>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_6874> | <http://www.wikidata.org/entity/Q158776>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_8276> | <http://www.wikidata.org/entity/Q255375>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_7236> | <http://www.wikidata.org/entity/Q158746>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_3074> | <http://www.wikidata.org/entity/Q156831>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_9263> | <http://www.wikidata.org/entity/Q732933>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_7302> | <http://www.wikidata.org/entity/Q159657>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_2227> | <http://www.wikidata.org/entity/Q158785>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_4825> | <http://www.wikidata.org/entity/Q17579300> |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1386> | <http://www.wikidata.org/entity/Q255375>   |
+--------------------------------------------------------------------------------------------------------------
+
+
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_796 --> Nombre cientifico: http://www.wikidata.org/entity/Q147064
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6874 --> Nombre cientifico: http://www.wikidata.org/entity/Q158776
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_8276 --> Nombre cientifico: http://www.wikidata.org/entity/Q255375
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_7236 --> Nombre cientifico: http://www.wikidata.org/entity/Q158746
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_3074 --> Nombre cientifico: http://www.wikidata.org/entity/Q156831
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_9263 --> Nombre cientifico: http://www.wikidata.org/entity/Q732933
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_7302 --> Nombre cientifico: http://www.wikidata.org/entity/Q159657
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_2227 --> Nombre cientifico: http://www.wikidata.org/entity/Q158785
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_4825 --> Nombre cientifico: http://www.wikidata.org/entity/Q17579300
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1386 --> Nombre cientifico: http://www.wikidata.org/entity/Q255375
+
 * Caso 2: Obtener la situación de todos los árboles de la ciudad
 
 		String queryString2 = 
@@ -504,21 +534,23 @@ A continuación se detallan los diferentes casos de uso que contempla la aplicac
 				 " geo:long ?longitud.}" +
 				"LIMIT 10";
 				
-* Caso 3: Obtener el nombre común equivalente al nombre cietífico de todos los árboles de la ciudad
+Salida:
 
-		String queryString3 = 	
-				"PREFIX wikibase: <http://wikiba.se/ontology#> " +
-				"PREFIX wdt: <http://www.wikidata.org/prop/direct/> " +
-				"PREFIX wd: <http://www.wikidata.org/entity/> " +
-				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
-				"SELECT ?arbol ?nombre_cientifico ?nombre_comun " +
-				"WHERE {?arbol biol:name ?nombre_cientifico. " +
-					"SERVICE wdt:label {?nombre_cientifico wdt:P1843 ?nombre_comun .}}" +
-				"LIMIT 10";
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_9637 --> Situado en: CALLE RIO EO s/n esqna San Nicolas 74, con las coordenadas: 4.35225283333333E1^^http://www.w3.org/2001/XMLSchema#double, -5.67204E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_9307 --> Situado en: CALLE DOS DE MAYO 10, con las coordenadas: 4.354004E1^^http://www.w3.org/2001/XMLSchema#double, -5.68525833333333E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_4074 --> Situado en: PASEO MARITIMO, con las coordenadas: 4.35475333333333E1^^http://www.w3.org/2001/XMLSchema#double, -5.64201333333333E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_4931 --> Situado en: CALLE LEOPOLDO ALAS, con las coordenadas: 4.35313516666667E1^^http://www.w3.org/2001/XMLSchema#double, -5.65257666666667E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1006 --> Situado en: Parque Isabel la Católica, con las coordenadas: 4.35388733333333E1^^http://www.w3.org/2001/XMLSchema#double, -5.64398833333333E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_4474 --> Situado en: QUEVEDO 55, con las coordenadas: 4.3531165E1^^http://www.w3.org/2001/XMLSchema#double, -5.64927166666667E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_5698 --> Situado en: AVENIDA DE LA COSTA 5, con las coordenadas: 4.3537455E1^^http://www.w3.org/2001/XMLSchema#double, -5.66405166666667E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_5434 --> Situado en: CALLE URIA 31, con las coordenadas: 4.353846E1^^http://www.w3.org/2001/XMLSchema#double, -5.65532666666667E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_591 --> Situado en: Parque Isabel la Católica, con las coordenadas: 4.35376366666667E1^^http://www.w3.org/2001/XMLSchema#double, -5.641195E0^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_2390 --> Situado en: CALLE IRENE FERNANDEZ PERERA s/n, con las coordenadas: 4.35199133333333E1^^http://www.w3.org/2001/XMLSchema#double, -5.66876E0^^http://www.w3.org/2001/XMLSchema#double
+
 				
-* Caso 4: Obtener los árboles con mayor diámetro de copa
+* Caso 3: Obtener los árboles con mayor diámetro de copa
 
-		String queryString4 = 
+		String queryString3 = 
 				"PREFIX arb: <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado#>" +
 				"PREFIX schema: <http://schema.org/> " +
 				"SELECT ?arbol ?calle ?diametro " +
@@ -526,26 +558,79 @@ A continuación se detallan los diferentes casos de uso que contempla la aplicac
 				+ "schema:streetAddress ?calle.}" +
 				"ORDER BY DESC(?diametro)" +
 				"LIMIT 10";
+				
+Salida:
 
-* Caso 5: Obtener todos los nombres y número de árboles distintos y ordenados existentes en el dataset
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_285 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.22E2^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_513 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.4E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_391 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.3E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_964 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.3E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_451 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.2E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_497 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.1E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_642 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.1E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_772 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.1E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_967 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.1E1^^http://www.w3.org/2001/XMLSchema#double
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1253 --> Situado en: Parque Isabel la Católica, con diametro de copa: 2.0E1^^http://www.w3.org/2001/XMLSchema#double
 
-		String queryString5 = 
+
+* Caso 4: Obtener todos los nombres y número de árboles distintos y ordenados existentes en el dataset
+
+		String queryString4 = 
 				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
 				"SELECT ?nombre_cientifico (COUNT(?nombre_cientifico) AS ?count)" +
 				"WHERE {?arbol biol:name ?nombre_cientifico} " +
 				"GROUP BY ?nombre_cientifico " +
 				"ORDER BY DESC(?count) " +
 				"LIMIT 20";
-				
-* Caso 6: Obtener todos los árboles alrededor de una ubicación dada (Por ejemplo: 43.531412, -5.661782)
 
-		String queryString6 = 
-				"PREFIX spatial: <http://jena.apache.org/spatial#>" +
-				"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>" + 
-				"SELECT * " +
-				"WHERE {?location spatial:nearby (43.531412 -5.661782 1 'km'). " +
-				 "?arbol geo:location ?location. }" +
-				"LIMIT 20";
+Arbol: http://www.wikidata.org/entity/Q1209219 --> Unidades: 1373^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q158746 --> Unidades: 1349^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q158776 --> Unidades: 842^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q255375 --> Unidades: 466^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q218155 --> Unidades: 400^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q161116 --> Unidades: 324^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q163981 --> Unidades: 324^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q158785 --> Unidades: 278^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q17579300 --> Unidades: 273^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q156831 --> Unidades: 266^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q147064 --> Unidades: 261^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q156944 --> Unidades: 251^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q165321 --> Unidades: 237^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q156907 --> Unidades: 168^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q732933 --> Unidades: 166^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q146951 --> Unidades: 146^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q146281 --> Unidades: 141^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q161374 --> Unidades: 140^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q26006 --> Unidades: 132^^http://www.w3.org/2001/XMLSchema#integer
+Arbol: http://www.wikidata.org/entity/Q149622 --> Unidades: 128^^http://www.w3.org/2001/XMLSchema#integer
+
+* Caso 5: Obtener todos los árboles con sus nombres científicos de una calle determinada (Por ejemplo: Parque Isabel la Católica)
+
+		String queryString5 = 
+				"PREFIX schema: <http://schema.org/> " +
+				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
+				"PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> " +
+				"SELECT ?arbol ?calle ?nombre_cientifico " +
+				"WHERE {?arbol schema:streetAddress ?calle; " +
+					"biol:name ?nombre_cientifico ." +
+					"FILTER regex(?calle, '^Parque Isabel la Católica')}" +
+				"LIMIT 10";
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+| arbol                                                         | calle                       | nombre_cientifico                         |
+===========================================================================================================================================
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1006> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q156907>  |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_591>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q26899>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_971>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q27657>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_638>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q156907>  |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_520>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q148950>  |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1290> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q158746>  |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_445>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q1330391> |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_154>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q386585>  |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_825>  | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q26006>   |
+| <http://smartcity.linkeddata.es/arbolado/resource/arbol_1000> | "Parque Isabel la Católica" | <http://www.wikidata.org/entity/Q748888>  |
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## 4. Conclusiones.
 
