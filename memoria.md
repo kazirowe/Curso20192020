@@ -2,7 +2,7 @@
 
 ## Índice
 
-[1. Introducción](#1. Introducción)
+[1. Introducción](#1)
 2. Proceso de transformación:
 	- Selección de la fuente de datos.
 	- Análisis de los datos.
@@ -16,7 +16,7 @@
 5. Bibliografía.
 
 
-## <a name="1. Introducción"></a>
+## 1. Introducción {#1}
 
 Los Datos Abiertos en el contexto de las Administraciones Públicas son una realidad desde hace aproximadamente 10 años, momento en el que las primeras iniciativas, USA y UK, iniciaron su andadura de apertura de datos que posteriormente fue seguida por numerosos países, regiones y ciudades, alentadas, entre otros movimientos inspiradores, por la [Carta Internacional por los Datos Abiertos](https://opendatacharter.net/), que fomenta los principios fundamentales que cualquier Iniciativa de Datos Abiertos debe asumir, entre ellos, alguno tan sugerente -a la par que  difícil de alcanzar-, como el que alienta la apertura por defecto de los datos públicos.
 
