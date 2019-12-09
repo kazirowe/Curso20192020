@@ -1,8 +1,8 @@
 # Práctica Web Semántica y Datos enlazados
 
-## Indice
+## Índice
 
-1. Introducción
+[1. Introducción](#1. Introducción)
 2. Proceso de transformación:
 	- Selección de la fuente de datos.
 	- Análisis de los datos.
@@ -16,7 +16,7 @@
 5. Bibliografía.
 
 
-## 1. Introducción
+## <a name="1. Introducción"></a>
 
 Los Datos Abiertos en el contexto de las Administraciones Públicas son una realidad desde hace aproximadamente 10 años, momento en el que las primeras iniciativas, USA y UK, iniciaron su andadura de apertura de datos que posteriormente fue seguida por numerosos países, regiones y ciudades, alentadas, entre otros movimientos inspiradores, por la [Carta Internacional por los Datos Abiertos](https://opendatacharter.net/), que fomenta los principios fundamentales que cualquier Iniciativa de Datos Abiertos debe asumir, entre ellos, alguno tan sugerente -a la par que  difícil de alcanzar-, como el que alienta la apertura por defecto de los datos públicos.
 
@@ -615,9 +615,14 @@ Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1000 de nombre cie
 
 ## 4. Conclusiones.
 
+El proceso de desarrollo de esta práctica conlleva la implementación de un pipeline para la identificación, análisis, descripción, transformación , enlazado y publicación de Datos Abiertos en el contexto de la web semántica. Asimismo, se ha hecho uso de diversas herramientas esenciales y de extraordinaria utilidad para llevarla a cabo: OpenRefine, Protege o la API de Jena para la implementación de la aplicación que explota los datos. Este ejercicio ha permitido además, aportar un draft de vocabulario reutilizable en el contexto de las smart cities para representar el arbolado de una ciudad. Para ello se ha analizado la publicación de datos abiertos de ese mismo contexto disponibles en otros catálogos de otras ciudades, para incorporar términos que se utilizan habitualmente, aunque no estén presentes en el dataset de ejemplo.  Este draft de vocabulario requiere aún un refinamiento experto para que pueda estar disponible para su reutilización. 
+
+Por último, la aplicación que explota los datos es sencilla y es conveniente reseñar las posibles ampliaciones que pueden ser implementadas: (i) sería factible enlazar los datos del arbolado de Gijón con el vocabulario de las calles de la ciudad desarrollado por Martín Alvarez Espinar, coordinador de la Oficina de W3C en España, para la [aplicación Miscalles de Gijón](https://datos.gob.es/es/aplicaciones/mis-calles-gijonxixon). De esta forma, sería posible vincular la historia de las calles de Gijón. Por otro lado, (ii) sería igualmente factible utilizar la herramienta Map4RDF para visualizar la información georeferenciada que contiene el conjunto de datos.
+
 
 ## 5. Bibliografía.
 
 * Apuntes de la asignatura "Web Semántica y Datos Enlazados"
+* R4SC - D4.1 - Requirements and guidelines for energy data generation: http://bit.do/R4SC-D4-1
 * Guidelines for Linked Data generation and publication: An example in building energy consumption: http://dx.doi.org/10.1016/j.autcon.2015.04.002
 * Ontology Development 101: A Guide to Creating Your First Ontology: https://protegewiki.stanford.edu/wiki/Ontology101
