@@ -77,7 +77,7 @@ Licencia: Creative Commons Reconocimiento 3.0 España: Libertad para compartir, 
 
 Formato de datos seleccionado para su descarga y posterior tratamiento: GeoRSS.
 
-![Dataset_inicial](/images/Dataset_Arbolado_Inicial.png)
+![Dataset_inicial](../images/Dataset_Arbolado_Inicial.png)
 
 El dataset archivo de datos presenta las siguientes características:
 
