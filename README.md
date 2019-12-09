@@ -1,7 +1,8 @@
-# masterIA-LinkedData
-Repositorio trabajos Linked Data Master IA
+# Práctica de la asignatura Web Semántica y Datos enlazados
 
-Contenido
+Este repositorio contiene la relaciónb de entregables de la práctica de la asignatura.
+
+Contenido:
 
 ## 1. [Memoria](memoria.md)
 ## 2. [Ontología](/ontologia)
