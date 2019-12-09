@@ -2,7 +2,7 @@
 
 ## Índice
 
-[1. Introducción](#1)
+1. Introducción
 2. Proceso de transformación:
 	- Selección de la fuente de datos.
 	- Análisis de los datos.
@@ -16,21 +16,21 @@
 5. Bibliografía.
 
 
-## 1. Introducción {#1}
+## 1. Introducción
 
 Los Datos Abiertos en el contexto de las Administraciones Públicas son una realidad desde hace aproximadamente 10 años, momento en el que las primeras iniciativas, USA y UK, iniciaron su andadura de apertura de datos que posteriormente fue seguida por numerosos países, regiones y ciudades, alentadas, entre otros movimientos inspiradores, por la [Carta Internacional por los Datos Abiertos](https://opendatacharter.net/), que fomenta los principios fundamentales que cualquier Iniciativa de Datos Abiertos debe asumir, entre ellos, alguno tan sugerente -a la par que  difícil de alcanzar-, como el que alienta la apertura por defecto de los datos públicos.
 
-Actualmente, son centenares las iniciativas de Datos Abiertos promovidas desde todos los niveles de Gobierno, que se desarrollan con desigual fortuna en todo le mundo. El foco es dispar, siendo la transparencia o el desarrollo económico a partir de datos, objetivos que no siempre comparten espacio entre las aspiraciones de los Gobiernos. Muchas de las iniciativas existentes, surgen de la imitación entre Administraciones y adolecen de fuertes debilidades en términos de calidad de datos disponibles. Una de ellas, es la escasa presencia de datos abiertos enlazados en los repositorios institucionales. Esta baja disponibilidad conlleva una exigua reutilización de este tipo de datos por parte del sector infomediario. 
+Actualmente, son centenares las iniciativas de Datos Abiertos promovidas desde todos los niveles de Gobierno, que se desarrollan con desigual fortuna en todo el mundo. El foco es dispar, siendo la transparencia o el desarrollo económico a partir de datos, objetivos que no siempre comparten espacio entre las aspiraciones de los Gobiernos. Muchas de las iniciativas existentes, surgen de la imitación entre Administraciones y adolecen de fuertes debilidades en términos de calidad de datos disponibles. Una de ellas, es la escasa presencia de datos abiertos enlazados en los repositorios institucionales. Esta baja disponibilidad conlleva una exigua reutilización de este tipo de datos por parte del sector infomediario. 
 
-No obstante, el escenario de apertura existente, con mucho camino aun por recorrer, es un proceso que forma parte de la inevitable y progresiva transformación estructural de las Administraciones, por tanto, los Datos Abiertos de Gobierno son una fuente esencial de datos con origen en organismos oficiales.
+No obstante, el escenario de apertura existente, con mucho camino aún por recorrer, es un proceso que forma parte de la inevitable y progresiva transformación estructural de las Administraciones, por tanto, los Datos Abiertos de Gobierno son una fuente esencial de datos con origen en organismos oficiales.
 
 Para el desarrollo de este trabajo se ha seleccionado un ámbito de aplicación relacionado con el contexto Smart City, como es el del **arbolado viario de una ciudad**. 
 
 Una motivación para realizar esta elección es la carencia de una ontología específica en esta materia entre las existentes en la relación de [vocabularios para Datos Abiertos de Ciudades](http://vocab.linkeddata.es/datosabiertos/), si bien existe una [propuesta](https://github.com/opencitydata/medio-ambiente-arbolado) pendiente de implementar. En base a lo anterior, se aprovecha este ejercicio para implementar dicha propuesta de ontología de arbolado viario.
 
-Además se ha estudiado la existencia de conjuntos de datos abiertos de arbolado viario en diferentes catálogos de datos abiertos del ambito municipal con el fin de verificar si se trata de un conjunto de datos habitual en estos repositorios de datos. Así, se ha visto que ciudades como Gijón, Barcelona, Sevilla, Rivas-Vaciamadrid y otras ciudades, incluyen el mencionado conjunto de datos en sus respectivos catálogos. Se ha seleccionado el conjunto de datos de la ciudad de Gijón para implementar las tareas del ejercicio.
+Además se ha estudiado la existencia de conjuntos de datos abiertos de arbolado viario en diferentes catálogos de datos abiertos del ámbito municipal con el fin de verificar si se trata de un conjunto de datos habitual en estos repositorios de datos. Así, se ha visto que ciudades como Gijón, Barcelona, Sevilla, Rivas-Vaciamadrid y otras ciudades, incluyen el mencionado conjunto de datos en sus respectivos catálogos. Se ha seleccionado el conjunto de datos de la ciudad de Gijón para implementar las tareas del ejercicio.
 
-A continuación, se expone la seuencia de tareas a realizar para alcanzar el objetivo de esta práctica:
+A continuación, se expone la secuencia de tareas a realizar para alcanzar el objetivo de esta práctica:
 
 ## 2. Proceso de transformación
 
@@ -41,14 +41,14 @@ Requisitos que debe satisfacer la fuente de datos:
 * Datos Abiertos
 * Escenario real
 * Disponer de una licencia apta para la reutilización
-* Datos accesibles (descargables como archivo de datos o accesible via API)
-* Datos procesables (por ejemplo a traves de un formato CSV o JSON)
+* Datos accesibles (descargables como archivo de datos o accesible vía API)
+* Datos procesables (por ejemplo a través de un formato CSV o JSON)
 * Datos actualizados
 * Datos enlazables (al menos uno de sus atributos)
 * Datos transformables en RDF
-* Ademas que sea un dataset común a varios municipios. 
+* Además que sea un dataset común a varios municipios. 
 
-A partir de estos requisitos, se observa en diversos catálogos municipales de Datos Abietos, la posible existencia de datasets con estas características relacionado con el ´mabito de aplicación elegido: arbolado viario de una ciudad. Se comprueba que existen conjuntos de datos similares en, al menos, los siguientes catálogos de Datos Abiertos:
+A partir de estos requisitos, se observa en diversos catálogos municipales de Datos Abiertos, la posible existencia de datasets con estas características relacionados con el ámbito de aplicación elegido: arbolado viario de una ciudad. Se comprueba que existen conjuntos de datos similares en, al menos, los siguientes catálogos de Datos Abiertos:
 
 * [Gijón](http://transparencia.gijon.es/risp_datasets/show/arbolado)
 * [Barcelona](https://opendata-ajuntament.barcelona.cat/data/es/dataset/arbrat-viari)
@@ -65,11 +65,11 @@ En función de los requisitos establecidos, se elige la siguiente opción:
 * Frecuencia de actualización: Actualizados a fecha Noviembre de 2019 (frecuencia mensual desde junio de 2013).
 * Datos reutilizables: CC-BY 3.0
 * Datos procesables: dataset disponible en los formatos GeoRSS, KML y RSS.
-* Datos enlazables: un atributo se puede enlazar con una taxonomia de especies arboreas.
+* Datos enlazables: un atributo se puede enlazar con una taxonomia de especies arbóreas.
 
 #### Análisis de la licencia de los datos
 
-El dataset seleccioado es perfectamente reutilizable en base a la condiciones de la licencia
+El dataset seleccionado es perfectamente reutilizable en base a la condiciones de la licencia que incorpora.
 
 Licencia: Creative Commons Reconocimiento 3.0 España: Libertad para compartir, adaptar, reutilizar, incluso con fines comerciales, bajo condiciones de reconocimiento de autoría y sin la posibilidad de aplicar restricciones o términos legales que restrinjan aquello que la licencia permite. https://creativecommons.org/licenses/by/3.0/es/
 
@@ -89,17 +89,16 @@ El dataset archivo de datos presenta las siguientes características:
 | channel - item - link | string | Contiene un valor único para todos los registros: www.gijon.es |
 | channel - item - title | string | Nombre del item de la forma 'arbol 0'. 'arbol 1', 'arbol, 2', etc. |
 channel - item - pubDate | date | Contiene el valor correspondiente a la fecha de publicación del dataset, donde el valor del primer registro es 'Sat, 02 Nov 2019 17:10:13 +0100' y el del último 'Sat, 02 Nov 2019 17:10:15 +0100', Por tanto, entre el primer valor y el último hay una diferencia de 2 segundos. |
-| channel - item - geo:lat | decimal | Contiene el valor de la latitud del punto geográfico donde se situa el item. |
-| channel - item - geo:long  | decimal | Contiene el valor de la longitud del punto geográfico donde se situa el item. |
+| channel - item - geo:lat | decimal | Contiene el valor de la latitud del punto geográfico donde se sitúa el item. |
+| channel - item - geo:long  | decimal | Contiene el valor de la longitud del punto geográfico donde se sitúa el item. |
 | channel - item - description | string | Contiene en cada valor como código HTML (tabla) con los siguientes contenidos: ubicación (dirección postal), especie, perimetro_tronco, altura_cruz y diametro_copa. |
 | channel - link | string | Contiene un único valor tan solo en el primer registro: "http://www.gijon.es" |
 | channel - title | string | Contiene un único valor tan solo en el primer registro: "Arbolado viario" |
 | channel - pubDate | string | Contiene un único valor tan solo en el primer registro: "Sat, 02 Nov 2019 17:10:13 +0100" |
 | channel - language | string | Contiene un único valor tan solo en el primer registro: "es" |
-| channel - description | string | Contiene un único valor tan solo en el primer registro: "Creado por el Ayuntamiento de Gijon" |
+| channel - description | string | Contiene un único valor tan solo en el primer registro: "Creado por el Ayuntamiento de Gijón" |
 
-
-Según el contenido de los campos, se selecciona aquellos que realmente aportan información, quedando la estructura de cmapos, pra aplicar las transformaciones que sean requeridas de la sigueinte manera:
+Según el contenido de los campos, se seleccionan aquellos que realmente aportan información quedando la siguiente estructura de campos preparada, para aplicar las transformaciones que sean requeridas, de la siguiente manera:
 
 | Nombre de campo | Tipo | Descripción |
 | -- | -- | -- |
@@ -110,41 +109,41 @@ Según el contenido de los campos, se selecciona aquellos que realmente aportan 
 
 Características de los campos de la tabla de datos:
 
-* El campo 'channel - item - title' es único para cda registro de la tabla de datos, por tanto, será el identidicador de cada item.
+* El campo 'channel - item - title' es único para cada registro de la tabla de datos, por tanto, será el identificador de cada ítem.
 características (rangos, ...) de los datos y su estructura (además, identificación de conceptos claves del dominio y relaciones entre ellos).
 * El campo 'channel - item - description' requiere la aplicación de varias transformaciones.
-* No contiene valories faltantes.
+* No contiene valores desconocidos.
 * El dataset no incluye información sobre las unidades de medida.
 
 Entre los metadatos del dataset no se incluye un diccionario de datos que describa su estructura. Por tanto, es necesario deducir ésta del propio conjunto de datos.
 
 * Cada elemento de la tabla está identificado por un identificador único ('channel - item - title').
 * Cada árbol pertenece a una especie.
-* Cada árbol, esta ubicado en una dirección postal que se corresponde con una coordenada geográfica, y posee una medidas cuyos valores se corresponden con tres atributos: perímetro_tronco, altura_cruz y diámetro_copa.
+* Cada árbol, está ubicado en una dirección postal que se corresponde con una coordenada geográfica, y posee una medidas cuyos valores se corresponden con tres atributos: perímetro_tronco, altura_cruz y diámetro_copa.
 
 ### 2.3.- Estrategia de nombrado
 
 #### 2.3.1.- Elección del formato de URIs:
 
-Dado que el conjunto de datos contiene un numero significativo de observaciones y seguiría creciendo con la disponibilidad de más datos, es apropiado definir las URIs de los individuos usando slash URIs (/) con redireciones a documentos genéricos (a tener en cuenta que se requerirá redireccionamiento 303 y negociación de contenido). Para el modelo ontológico, mas pequeño, usaré hash URIs (#). Por tanto:
+Dado que el conjunto de datos contiene un número significativo de observaciones y seguiría creciendo con la disponibilidad de más datos, es apropiado definir las URIs de los individuos usando slash URIs (/) con redirecciones a documentos genéricos (a tener en cuenta que se requerirá redireccionamiento 303 y negociación de contenido). Para el modelo ontológico, más pequeño, usaré hash URIs (#). Por tanto:
 
 #### 2.3.2.- Elección de dominio y path para las URIs, para formar la base de las URIs
 
 Teniendo en cuenta que existe la propuesta de [ontología de arbolado](https://github.com/opencitydata/medio-ambiente-arbolado) mencionada anteriormente pero sin implementación, se toma como base para el desarrollo de esta práctica. Por tanto, la base de las URIs elegida para el modelo ontológico y los datos es: http://smartcity.linkeddata.es/arbolado/
 
-Aspectos claves de esta etapa son: i) desambiguación: una URI debe identificar un único ítem. y ii) las URIs debe ser persistentes y no deben contener nada que pueda cambiar (por ejemplo, información sobre el estado del recurso). Es posible lograr esto último usando PURL (persisten uniform resources locator).
+Aspectos claves de esta etapa son: i) desambiguación: una URI debe identificar un único ítem. y ii) las URIs debe ser persistentes y no deben contener nada que pueda cambiar (por ejemplo, información sobre el estado del recurso). Es posible lograr esto último usando PURL (Persistent Uniform Resources Locator).
 
 #### 2.3.3.- Elección de un patrón para las clases y propiedades de la ontología, igualmente para los individuos.
 
-El patrón de URIs, tomando como base la seleccioanda será:
+El patrón de URIs, tomando como base la seleccionada será:
 
 * URI de los recursos: http://smartcity.linkeddata.es/arbolado/resource/
 * URI de la ontología: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/arbolado
 
 Ruta para términos ontológicos: 
 
-Las clases tendrán la forma: /ontology/<ontologyName>#<className>
-Las propiedades tendrán la forma: /ontology/<ontologyName>#<propertyName>
+Las clases tendrán la forma: /ontology/&ltontologyName>#<className>
+Las propiedades tendrán la forma: /ontology/&ltontologyName>#<propertyName>
 
 Concretamente:
 
@@ -153,7 +152,7 @@ Concretamente:
 
 Las instancias en la ontología tendrán la forma:
 
-Instancias: /resource/<className>/<identifier>
+Instancias: /resource/&ltclassName>/<identifier>
 
 Concretamente:
 
