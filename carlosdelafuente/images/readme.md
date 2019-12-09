@@ -1,1 +1,3 @@
-Imágenes contenidas en la memoria
+## Imágenes 
+
+Esta carpeta contiene el conjunto de imágenes incluidas en la memoria
