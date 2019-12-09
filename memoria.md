@@ -142,8 +142,8 @@ El patrón de URIs, tomando como base la seleccionada será:
 
 Ruta para términos ontológicos: 
 
-Las clases tendrán la forma: /ontology/&ltontologyName>#<className>
-Las propiedades tendrán la forma: /ontology/&ltontologyName>#<propertyName>
+Las clases tendrán la forma: /ontology/<ontologyName>#<className>
+Las propiedades tendrán la forma: /ontology/<ontologyName>#<propertyName>
 
 Concretamente:
 
@@ -152,7 +152,7 @@ Concretamente:
 
 Las instancias en la ontología tendrán la forma:
 
-Instancias: /resource/&ltclassName>/<identifier>
+Instancias: /resource/<className>/<identifier>
 
 Concretamente:
 
@@ -171,7 +171,7 @@ El dominio de información que abarcará los términos que se definan en este vo
 
 * ¿Cuál será el uso de la ontología?
 
-El propósito de este vocabulario es representar la información relacioada con el arbolado viario de una ciudad (ubicación, especie, dimensiones, fecha de plantación, fecha de poda, etc.), Los ficehros que contienen estos datos son mantenidos por los ayuntamientos.
+El propósito de este vocabulario es representar la información relacionada con el arbolado viario de una ciudad (ubicación, especie, dimensiones, fecha de plantación, fecha de poda, etc.), Los archivos que contienen estos datos son mantenidos por los Ayuntamientos.
 
 * ¿Para qué tipos de preguntas la ontología deberá dar respuestas?
 
@@ -181,11 +181,11 @@ Debe responder a preguntas del tipo:
 ¿Es posible obtener una mediante una representación cartográfica la ubicación donde se encuentra cada árbol?
 ¿Es posible conocer aspectos del cuidado y mantenimiento de cada árbol de un municipio (poda, soporte, etc.)?
 ¿es posible utilizar un vocabulario estándar para la representación de las coordenadas geográficas?
-¿Es posible, en función de las dimensiones de cada árbol, emplear una formula para calcular la superficie de sombra?
+¿Es posible, en función de las dimensiones de cada árbol, emplear una fórmula para calcular la superficie de sombra?
 
 * ¿Quién usará y mantendrá la ontología?
 
-La ontología será utilizada por los Ayuntamientos publicadores de Datos Abiertos en sus respectovos catálogos y puede ser mantenida por el Grupo de Trabajo de Datos Abiertos creado por la FEMP al amparo del trabajo ["Datos Abiertos: Guía estratégica para su puesta en marcha. Conjuntos de datos mínimos a publicar"](http://femp.femp.es/files/3580-1617-fichero/Gu%C3%ADa%20Datos%20Abiertos.pdf). 
+La ontología será utilizada por los Ayuntamientos publicadores de Datos Abiertos en sus respectivos catálogos y puede ser mantenida por el Grupo de Trabajo de Datos Abiertos creado por la FEMP al amparo del trabajo ["Datos Abiertos: Guía estratégica para su puesta en marcha. Conjuntos de datos mínimos a publicar"](http://femp.femp.es/files/3580-1617-fichero/Gu%C3%ADa%20Datos%20Abiertos.pdf). 
 
 
 Por otro lado, se debe tener en cuenta, como requisito no funcional para la implementación de la ontología, la existencia de vocabularios reutilizables.
@@ -197,7 +197,7 @@ Por otro lado, se debe tener en cuenta, como requisito no funcional para la impl
 Del modelo de datos subyacente al conjunto seleccionado para esta práctica se obtiene la siguiente relación de recursos principales:
 
 * Identificador del árbol
-* Especie arborea
+* Especie arbórea
 * Ubicación (Coordenadas geográficas: latitud, longitud)
 * Dirección postal
 * Dimensiones de árboles
@@ -211,7 +211,7 @@ Existen las siguientes relaciones entre recursos:
 * Las dimensiones se determinan por los atributos: perímetro_tronco, altura_cruz y diámetro_copa.
 * Cada árbol tiene unas dimensiones
 * Las unidades de medida de perimetro_tronco son centímetros
-* Las unidades de medida de altura:_cruz y diametro_copa son metros.
+* Las unidades de medida de altura: altura_cruz y diametro_copa son metros.
 
 Por otro lado, el estudio de los campos incluidos en los diferentes ejemplos de conjuntos de datos publicados en los catálogos de Datos Abiertos municipales mencionados anteriormente, arroja la siguiente propuesta de campos mínimos:
 
@@ -220,7 +220,7 @@ Por otro lado, el estudio de los campos incluidos en los diferentes ejemplos de 
 * Ubicación (Coordenadas Latitud, Longitud)
 * Dirección postal
 * Fecha de plantación
-* Fecha de ultima poda
+* Fecha de última poda
 * Dimensiones del árbol (perímetro tronco, diámetro copa, altura cruz)
 * Tipo de soporte (parterre, alcorque cuadrado, alcorque redondo, otros)
 * Dimensiones del alcorque
@@ -228,15 +228,15 @@ Por otro lado, el estudio de los campos incluidos en los diferentes ejemplos de 
 
 #### 2.4.3.- Definición del modelo ontológico
 
-El modelo concetual ontologico que se puede extraer del modelo de datos subyacente al conjunto seleccionado para esta práctica es el siguiente:
+El modelo conceptual ontológico que se puede extraer del modelo de datos subyacente al conjunto seleccionado para esta práctica es el siguiente:
 
 ![Modelo conceptual ontológico](/images/Modelo_conceptual_ontologico.png)
 
 #### 2.4.4.- Búsqueda de Ontologías reutilizables
 
-La búsqueda se realiza principalmente en Linked Open Vocabularies (LOV) donde se observa la oportunidad para reutilizar las sigueintes ontologias que tienen relación con la ontología a implementar en la práctica
+La búsqueda se realiza principalmente en Linked Open Vocabularies (LOV) donde se observa la oportunidad para reutilizar las siguientes ontologías que tienen relación con la ontología a implementar en la práctica
 
-* schema.org, se puede utiliar para describir direcciones postales (schema:postalAdress tiene la propiedad schema:streetAddress)
+* schema.org, se puede utilizar para describir direcciones postales (schema:postalAdress tiene la propiedad schema:streetAddress)
 * wikidata, se puede utilizar para describir la clase 'árbol' equivalente a la clase ['tree'](https://www.wikidata.org/wiki/Q10884).
 * Biological Taxonomy Vocabulary 0.2 (Core) (biol) se puede utilizar para describir las especies botánicas a través de su nombre científico (biol:name).
 * las propiedades geo:lat y geo:long del vocabulario WGS84 (wsg84_pos:SpatialThing), se pueden usar para describir las coordenadas geográficas.
@@ -259,7 +259,7 @@ Según lo anterior se reutilizarán las ontologías:
 
 #### 2.4.6.- Implementación de la ontología
 
-Para afrontar esta tarea se utiliza el editor de ontologias: Protégé V.5.5.0
+Para afrontar esta tarea se utiliza el editor de ontologías: Protégé V.5.5.0
 
 De acuerdo a un lenguaje de implementación de ontologías y siguiendo la estrategia de nombrado de recursos.
 
@@ -284,8 +284,8 @@ Y por tanto se podría usar el siguiente logo para indicar el estado de la ontol
 
 ### 2.5.- Transformación de datos
 
-La serialización en RDF que se utilizará para transformar los datos es RDF Turtle.
-La herramienta para realizar las transformaciones es OpenRefine V.3.2 con la extensión RDF V.1.1.4 sobre MacOs.
+La serialización en RDF que se utilizará para transformar los datos es RDF Turtle. La herramienta para realizar las transformaciones es OpenRefine V.3.2 con la extensión RDF V.1.1.4 sobre MacOs.
+
 Antes de realizar el mapping entre los datos de origen y la ontología es necesario aplicar una serie de transformaciones para preparar los datos adecuadamente.
 
 #### 2.5.1.- Transformaciones sobre OpenRefine
@@ -315,7 +315,7 @@ T.2.1.- Split 9727 cell(s) in column rss - channel - item - description into sev
 
 T.2.2.- Sobre la columna: rss - channel - item - description 2
 
-substring(value, 27, lastIndexOf(value,"</td>")) genera la columna: Ubicacion
+substring(value, 27, lastIndexOf(value,"</td>")) genera la columna: Ubicación
 
 T.2.3.- Sobre la columna: rss - channel - item - description 3
 
@@ -353,7 +353,7 @@ T.6.- Aplicar a la columna 'identificador', la siguiente transformación para ge
 
 replace(value, " ", "_")
 
-La transformación resultante se visualia en la siguiente imagen:
+La transformación resultante se representa en la siguiente imagen:
 
 ![Dataset arbolado transformado](/images/Dataset_Arbolado_transformado.png)
 
@@ -362,7 +362,7 @@ Posteriormente, se realizará el mapeo entre este nueva tabla de datos y la onto
 
 En esta etapa se trata, además, de aplicar buenas prácticas siempre que sea posible: evitar blank nodes, usar HTTP URIs, usar URIs externas, incluir enlaces owl:sameAs y reutilizar términos existentes.
 
-En primer lugar, se selecciona como identificador único del conjunto de datos el atributo "Identificador" que será utilizado para constriuir las URIs de cada recurso. Esta decisión se toma estudiando las facetas de texto de dicho campo y se observa que efectivamente se trata de valores únicos para cada uno de los registros (arbol_0, arbol_1, arbol_2, ... arbol_9727).
+En primer lugar, se selecciona como identificador único del conjunto de datos el atributo "Identificador" que será utilizado para construir las URIs de cada recurso. Esta decisión se toma estudiando las facetas de texto de dicho campo y se observa que efectivamente se trata de valores únicos para cada uno de los registros (arbol_0, arbol_1, arbol_2, ... arbol_9727).
 
 El esqueleto RDF se edita en base a los siguientes pasos:
 
@@ -383,9 +383,10 @@ En este paso se añaden otros prefijos que serán utilizados durante el mapeo a 
 
 P2.- El esqueleto RDF se construye añadiendo las siguientes recursos:
 
-En primer lugar, se implementa el patrón de inmbrado para los individuos:
+En primer lugar, se implementa el patrón de nombrado para los individuos:
 
 'Identificador' content used 'URI' use expression value
+
 Indicamos además que los individuos identificados mediante esta URI son del tipo dbpedia:tree
 
 ![URIs individuos](/images/Esqueleto_RDF_URI.png)
@@ -405,7 +406,7 @@ Análogamente, se añaden propiedades:
 
 ![Esqueleto RDF](/images/Esqueleto_RDF.png)
 
-Una vez realizado el proceso anterior, es possible exportar la serialización en RDF generada
+Una vez realizado el proceso anterior, es posible exportar la serialización en RDF generada
 
 ![Arbolado TTL](/images/Arbolado_ttl.png)
 
@@ -420,13 +421,13 @@ La tarea de enlazado se realizará utilizando el servicio de reconciliación de 
 
 El primer paso es identificar clases cuyas instancias puedan ser el sujeto del enlace y el segundo paso es identificar datasets que pueden contener instancias para las clases previamente identificadas.
 
-En este caso, ser realizará una alineación por valores, la clase a enlazar será 'Especie' y se enlazará con el nombre cientifico de la especie arborea definida en Wikidata, 'taxon name'.
+En este caso, ser realizará una alineación por valores, la clase a enlazar será 'Especie' y se enlazará con el nombre cientifico de la especie arbórea definida en Wikidata, 'taxon name'.
 
-Este proceso nos definela URL que define cada especie en Wikidata y que hemos añadido en el esqueleto RDFn mencionado anteriormente:
+Este proceso nos define la URL que define cada especie en Wikidata y que hemos añadido en el esqueleto RDFn mencionado anteriormente:
 
 'Especie' content used 'URI' use expression '"http://www.wikidata.org/entity/"+cell.recon.match.id'
 
-El proceso de reconciliación de valores requiere, ademñas, la corrección de algunos ítems con nombres erróneos. Por ejemplo, se sutituye: 'Junglans regia' por 'Juglans regia', 'Hulmus minor' por 'Ulmus minor', 'Cassuarina cunninghamiana' por 'Casuarina cunninghamiana', 'Hibiscus syracus' por 'Hibiscus syriacus' 'Ilex aquilifolium' por 'Ilex aquifolium' y otros errores del mismo estilo. También se edita 'Cedrus deodara o atlantica' por 'Cedrus deodara'. Igualmente se encuentra alguna especie cuya denoninación es 'desconocido 6.2', 'Fraxinus americana verificar' o 'Liriodendron tulipifera KO' que se puede sobreentender que por alguna imprecisión están en pendientes de revisión por parte de los responsables del dataset. Por último algunas especies incluyen nombres del estilo 'Carpinus betulus var. fastigiata'
+El proceso de reconciliación de valores requiere, además, la corrección de algunos ítems con nombres erróneos. Por ejemplo, se sustituye: 'Junglans regia' por 'Juglans regia', 'Hulmus minor' por 'Ulmus minor', 'Cassuarina cunninghamiana' por 'Casuarina cunninghamiana', 'Hibiscus syracus' por 'Hibiscus syriacus' 'Ilex aquilifolium' por 'Ilex aquifolium' y otros errores del mismo estilo. También se edita 'Cedrus deodara o atlantica' por 'Cedrus deodara'. Igualmente se encuentra alguna especie cuya denominación es 'desconocido 6.2', 'Fraxinus americana verificar' o 'Liriodendron tulipifera KO' que se puede sobreentender que por alguna imprecisión están en pendientes de revisión por parte de los responsables del dataset. Por último algunas especies incluyen nombres del estilo 'Carpinus betulus var. fastigiata'
 
 Nota curiosa: se encuentra una especie ('Arbol_9724') que se llama 'Parking autoctonus' situada en el 'Parque Científico-Tecnológico' ;-)
 
@@ -456,6 +457,8 @@ La publicación se realiza en DataHub.io, previo registro. Pasos que se siguen:
 
 #### 2.7.1.- Registro.
 
+Login de usuario y acceso.
+
 #### 2.7.2.- Descarga, instalación y comprobación del funcionamiento de la herramienta de publicación para MacOS.
 
 ```
@@ -484,7 +487,7 @@ El objetivo de la aplicación es obtener información sobre características esp
 
 A continuación se detallan los diferentes casos de uso que contempla la aplicación y la query SPARQL que se plantea para resolver cada consulta :
 
-* Caso 1: Obtener los nombres cietíficos de todos los árboles de la ciudad
+* Caso 1: Obtener los nombres científicos de todos los árboles de la ciudad
 
 		String queryString = 
 				"PREFIX biol: <http://ontologi.es/biol/botany#>" +
@@ -586,7 +589,7 @@ Arbol: http://www.wikidata.org/entity/Q161374 --> Unidades: 140^^http://www.w3.o
 Arbol: http://www.wikidata.org/entity/Q26006 --> Unidades: 132^^http://www.w3.org/2001/XMLSchema#integer
 Arbol: http://www.wikidata.org/entity/Q149622 --> Unidades: 128^^http://www.w3.org/2001/XMLSchema#integer
 
-* Caso 5: Obtener todos los árboles con sus nombres científicos de una calle determinada (Por ejemplo: Parque Isabel la Católica)
+* Caso 5: Obtener todos los árboles con sus nombres científicos de una calle determinada (Por ejemplo: CALLE POLA DE SIERO)
 
 		String queryString5 = 
 				"PREFIX schema: <http://schema.org/> " +
@@ -595,21 +598,21 @@ Arbol: http://www.wikidata.org/entity/Q149622 --> Unidades: 128^^http://www.w3.o
 				"SELECT ?arbol ?calle ?nombre_cientifico " +
 				"WHERE {?arbol schema:streetAddress ?calle; " +
 					"biol:name ?nombre_cientifico ." +
-					"FILTER regex(?calle, '^Parque Isabel la Católica')}" +
+					"FILTER regex(?calle, '^CALLE POLA DE SIERO')}" +
 				"LIMIT 10";
 
 Salida:
 
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1006 de nombre científico: http://www.wikidata.org/entity/Q156907, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_591 de nombre científico: http://www.wikidata.org/entity/Q26899, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_971 de nombre científico: http://www.wikidata.org/entity/Q27657, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_638 de nombre científico: http://www.wikidata.org/entity/Q156907, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_520 de nombre científico: http://www.wikidata.org/entity/Q148950, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1290 de nombre científico: http://www.wikidata.org/entity/Q158746, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_445 de nombre científico: http://www.wikidata.org/entity/Q1330391, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_154 de nombre científico: http://www.wikidata.org/entity/Q386585, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_825 de nombre científico: http://www.wikidata.org/entity/Q26006, situado en:Parque Isabel la Católica
-Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_1000 de nombre científico: http://www.wikidata.org/entity/Q748888, situado en:Parque Isabel la Católica
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6344 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 9
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6342 de nombre científico: http://www.wikidata.org/entity/Q161511, situado en:CALLE POLA DE SIERO 5
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6346 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 13
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6352 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 10
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6339 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6343 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 7
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6354 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 8
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6341 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 3
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6350 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO 12
+Arbol: http://smartcity.linkeddata.es/arbolado/resource/arbol_6351 de nombre científico: http://www.wikidata.org/entity/Q159553, situado en:CALLE POLA DE SIERO
 
 
 ## 4. Conclusiones.
