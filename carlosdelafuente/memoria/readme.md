@@ -190,7 +190,7 @@ La ontología será utilizada por los Ayuntamientos publicadores de Datos Abiert
 
 Por otro lado, se debe tener en cuenta, como requisito no funcional para la implementación de la ontología, la existencia de vocabularios reutilizables.
 
-![Protege Arbolado](images/Protege_Arbolado.png)
+![Protege Arbolado](../images/Protege_Arbolado.png)
 
 #### 2.4.2.- Extracción de términos del esquema de datos y de los datos
 
@@ -230,7 +230,7 @@ Por otro lado, el estudio de los campos incluidos en los diferentes ejemplos de 
 
 El modelo conceptual ontológico que se puede extraer del modelo de datos subyacente al conjunto seleccionado para esta práctica es el siguiente:
 
-![Modelo conceptual ontológico](/images/Modelo_conceptual_ontologico.png)
+![Modelo conceptual ontológico](../images/Modelo_conceptual_ontologico.png)
 
 #### 2.4.4.- Búsqueda de Ontologías reutilizables
 
@@ -279,7 +279,7 @@ El resultado de la evaluación en OOPS! indica:
 
 Y por tanto se podría usar el siguiente logo para indicar el estado de la ontología en la pagina de documentación de la misma:
 
-![logo Oops minor pitfalls](/images/oops_minor.png)
+![logo Oops minor pitfalls](../images/oops_minor.png)
 
 
 ### 2.5.- Transformación de datos
@@ -355,7 +355,7 @@ replace(value, " ", "_")
 
 La transformación resultante se representa en la siguiente imagen:
 
-![Dataset arbolado transformado](/images/Dataset_Arbolado_transformado.png)
+![Dataset arbolado transformado](../images/Dataset_Arbolado_transformado.png)
 
 
 Posteriormente, se realizará el mapeo entre este nueva tabla de datos y la ontología, que permitirá el nombrado de todas las instancias en el dataset de acuerdo a la estrategia de nombrado definida.
@@ -376,9 +376,9 @@ Para los individuos indicamos la siguiente base URI: http://smartcity.linkeddata
 
 En este paso se añaden otros prefijos que serán utilizados durante el mapeo a los que tenemos por defecto (rdf, rdfs y owl):
 
-* geo	http://www.w3.org/2003/01/geo/wgs84_pos#
+* geo		http://www.w3.org/2003/01/geo/wgs84_pos#
 * schema	http://schema.org/
-* biol	http://ontologi.es/biol/botany#
+* biol		http://ontologi.es/biol/botany#
 * dbpedia	http://dbpedia.org/resource/
 
 P2.- El esqueleto RDF se construye añadiendo las siguientes recursos:
@@ -389,7 +389,7 @@ En primer lugar, se implementa el patrón de nombrado para los individuos:
 
 Indicamos además que los individuos identificados mediante esta URI son del tipo dbpedia:tree
 
-![URIs individuos](/images/Esqueleto_RDF_URI.png)
+![URIs individuos](../images/Esqueleto_RDF_URI.png)
 
 Análogamente, se añaden propiedades:
 
@@ -404,15 +404,15 @@ Análogamente, se añaden propiedades:
 | arb:hasDiametroCopa | 'Diametro_copa' content used 'Non-integer' use expression 'value' |
 | sowl:sameAs | Constant value 'Tree' custom (specify type URI) 'https://www.wikidata.org/wiki/Q10884' |
 
-![Esqueleto RDF](/images/Esqueleto_RDF.png)
+![Esqueleto RDF](../images/Esqueleto_RDF.png)
 
 Una vez realizado el proceso anterior, es posible exportar la serialización en RDF generada
 
-![Arbolado TTL](/images/Arbolado_ttl.png)
+![Arbolado TTL](../images/Arbolado_ttl.png)
 
 Por último, se procede a la evaluación del dataset en RDF obtenido. Para ello, se realiza una validación sintáctica usando la herramienta RDF [Validata](https://www.w3.org/2015/03/ShExValidata/) de W3C. Se obtiene el siguiente resultado de la validación:
 
-![Validación RDF](/images/Validata_RDF_TTL.png)
+![Validación RDF](../images/Validata_RDF_TTL.png)
 
 
 ### 2.6.- Enlazado
@@ -481,7 +481,7 @@ https://datahub.io/carlosdlfuente/arbolado_viario_gijon/v/1
 
 ## 3.- Aplicación y explotación
 
-La [aplicación](/aplicacion/) que explota los datos enlazados del conjunto transformado, se desarrolla usando la API de JENA sobre la IDE de Eclipse.  
+La [aplicación](../aplicacion/) que explota los datos enlazados del conjunto transformado, se desarrolla usando la API de JENA sobre la IDE de Eclipse.  
 
 El objetivo de la aplicación es obtener información sobre características específicas de ejemplares de especies arbóreas de la ciudad de Gijón.
 
