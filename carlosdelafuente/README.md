@@ -1,6 +1,6 @@
 # Práctica de la asignatura Web Semántica y Datos enlazados
 
-Este repositorio contiene la relaciónb de entregables de la práctica de la asignatura.
+Este repositorio contiene la relación de entregables de la práctica de la asignatura.
 
 Contenido:
 
